@@ -10,6 +10,8 @@ Group(de):	Applikationen/Laut
 Group(pl):	Aplikacje/D¼wiêk
 Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-aclocal.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
