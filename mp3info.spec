@@ -29,7 +29,7 @@ Umo¿liwia dowolne skonfigurowanie wy¶wietlanych przez to narzêdzie informacji.
 %build
 CXXFLAGS=$RPM_OPT_FLAGS LDFLAGS=-s ./configure --prefix=/usr \
 	--mandir=%{_mandir}
-make
+%{__make}
 
 %install
 %{__make} install prefix=$RPM_BUILD_ROOT/usr mandir=$RPM_BUILD_ROOT/%{_mandir}
