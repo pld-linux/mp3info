@@ -44,8 +44,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc {AUTHORS,COPYING,NEWS,README,ChangeLog,mp3info.lsm}.gz
 %attr(755,root,root) %{_bindir}/*
 %attr(644,root,root) %{_mandir}/*/*
-
-%changelog
-
-* Fri Apr 09 1999 H. Turgut Uyar <uyar@cs.itu.edu.tr>
-- 0.2.16 sürümüne geçiþ
