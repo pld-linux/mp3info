@@ -6,10 +6,6 @@ Version:	0.2.16
 Release:	5
 License:	GPL
 Group:		Applications/Sound
-Group(de):	Applikationen/Laut
-Group(es):	Aplicaciones/Sonido
-Group(pl):	Aplikacje/D¼wiêk
-Group(pt_BR):	Aplicações/Som
 Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-aclocal.patch
 Patch1:		%{name}-time.h.patch
