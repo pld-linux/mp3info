@@ -36,7 +36,7 @@ deðiþtirmenizi saðlayan bir komut satýrý aracýdýr. Çeþitli þekillerde
 rm -f missing
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 CXX=%{__cc}; export CXX
 %configure
 %{__make}
