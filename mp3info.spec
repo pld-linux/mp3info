@@ -34,7 +34,7 @@ deðiþtirmenizi saðlayan bir komut satýrý aracýdýr. Çeþitli þekillerde
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 CXX=%{__cc}; export CXX
