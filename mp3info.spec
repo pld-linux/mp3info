@@ -6,7 +6,7 @@ Version:     0.2.16
 Release:     2
 Copyright:   GPL
 Source:      ftp://bimbo.hive.no/pub/mp3info/mp3info-%version.tar.bz2
-BuildRoot:   /var/tmp/mp3info
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Group:       Applications/Multimedia
 Group(tr):   Uygulamalar/Çokluortam
 
