@@ -3,11 +3,13 @@ Summary(pl):	Program do manipulowania tagami ID3 plików w formacie MP3
 Summary(tr):	MP3 ses dosyasý bilgileri düzenleme aracý
 Name:		mp3info
 Version:	0.2.16
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Sound
 Group(de):	Applikationen/Laut
+Group(es):	Aplicaciones/Sonido
 Group(pl):	Aplikacje/D¼wiêk
+Group(pt_BR):	Aplicações/Som
 Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-aclocal.patch
 BuildRequires:	autoconf
