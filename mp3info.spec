@@ -1,14 +1,15 @@
-Summary:     Utility for MP3 information and tag modification
-Summary(tr): MP3 ses dosyasý bilgileri düzenleme aracý
-Summary(pl): Program do manipulowania tagami ID3 plików w formacie MP3.
-Name:        mp3info
-Version:     0.2.16
-Release:     2
-Copyright:   GPL
-Source:      ftp://bimbo.hive.no/pub/mp3info/mp3info-%version.tar.bz2
+Summary:	Utility for MP3 information and tag modification
+Summary(tr):	MP3 ses dosyasý bilgileri düzenleme aracý
+Summary(pl):	Program do manipulowania tagami ID3 plików w formacie MP3.
+Name:		mp3info
+Group:		Applications/Sound
+Group(pl):	Aplikacje/D¼wiêk
+Version:	0.2.16
+Release:	3
+License:	GPL
+Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-aclocal.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Group:       Applications/Multimedia
-Group(tr):   Uygulamalar/Çokluortam
 
 %description
 mp3info is a command line utility to extract and manipulate TAG (ID3)
@@ -20,27 +21,35 @@ deðiþtirmenizi saðlayan bir komut satýrý aracýdýr. Çeþitli þekillerde
 çýktýlar verebilir.
 
 %description -l pl
-mp3info jest programem do manipulowania tagami ID3 plików w formacie MP3.
-Umo¿liwia dowolne skonfigurowanie wy¶wietlanych przez to narzêdzie informacji.
+mp3info jest programem do manipulowania tagami ID3 plików w formacie
+MP3. Umo¿liwia dowolne skonfigurowanie wy¶wietlanych przez to
+narzêdzie informacji.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-CXXFLAGS=$RPM_OPT_FLAGS LDFLAGS=-s ./configure --prefix=/usr \
-	--mandir=%{_mandir}
+LDFLAGS=-s; export LDFLAGS
+aclocal
+autoconf
+automake
+autoheader
+%configure
 %{__make}
 
 %install
-%{__make} install prefix=$RPM_BUILD_ROOT/usr mandir=$RPM_BUILD_ROOT/%{_mandir}
-gzip -9nf AUTHORS COPYING NEWS README ChangeLog mp3info.lsm
-gzip -9nf $RPM_BUILD_ROOT/%{_mandir}/*/*
+rm -rf $RPM_BUILD_ROOT
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+gzip -9nf AUTHORS COPYING NEWS README ChangeLog \
+	$RPM_BUILD_ROOT/%{_mandir}/*/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {AUTHORS,COPYING,NEWS,README,ChangeLog,mp3info.lsm}.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_mandir}/*/*
+%{_mandir}/*/*
