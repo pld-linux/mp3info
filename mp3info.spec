@@ -7,6 +7,7 @@ Release:	5
 License:	GPL
 Group:		Applications/Sound
 Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
+# Source0-md5:	ef1b3d9b83d2918699de60942fe8d5b5
 Patch0:		%{name}-aclocal.patch
 Patch1:		%{name}-time.h.patch
 BuildRequires:	autoconf
