@@ -12,6 +12,7 @@ Group(pl):	Aplikacje/D¼wiêk
 Group(pt_BR):	Aplicações/Som
 Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-aclocal.patch
+Patch1:		%{name}-time.h.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,12 +34,14 @@ deðiþtirmenizi saðlayan bir komut satýrý aracýdýr. Çeþitli þekillerde
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
 aclocal
 autoconf
 automake -a -c
+CXX=%{__cc}; export CXX
 %configure
 %{__make}
 
