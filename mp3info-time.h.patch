@@ -1,0 +1,10 @@
+--- mp3info-0.2.16/mp3info.cxx~	Sun Jan 13 14:18:57 2002
++++ mp3info-0.2.16/mp3info.cxx	Sun Jan 13 14:18:57 2002
+@@ -12,6 +12,7 @@
+ #include <sys/time.h>
+ #include <unistd.h>
+ #include <fcntl.h>
++#include <time.h>
+ #include "mp3info.hxx"
+ 
+ #define NUMFORMATS 7
