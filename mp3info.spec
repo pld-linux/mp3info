@@ -32,7 +32,7 @@ CXXFLAGS=$RPM_OPT_FLAGS LDFLAGS=-s ./configure --prefix=/usr \
 make
 
 %install
-make install prefix=$RPM_BUILD_ROOT/usr mandir=$RPM_BUILD_ROOT/%{_mandir}
+%{__make} install prefix=$RPM_BUILD_ROOT/usr mandir=$RPM_BUILD_ROOT/%{_mandir}
 gzip -9nf AUTHORS COPYING NEWS README ChangeLog mp3info.lsm
 gzip -9nf $RPM_BUILD_ROOT/%{_mandir}/*/*
 
