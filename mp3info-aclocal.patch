@@ -1,0 +1,12 @@
+diff -Naur mp3info-0.2.16/configure.in mp3info-0.2.16-p/configure.in
+--- mp3info-0.2.16/configure.in	Fri Mar 19 21:01:03 1999
++++ mp3info-0.2.16-p/configure.in	Mon Jul 17 15:32:37 2000
+@@ -4,7 +4,7 @@
+ 
+ dnl Checks for programs.
+ AC_PROG_CXX
+-AM_PROG_INSTALL
++AC_PROG_INSTALL
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
