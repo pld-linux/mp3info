@@ -33,10 +33,10 @@ deðiþtirmenizi saðlayan bir komut satýrý aracýdýr. Çeþitli þekillerde
 %patch0 -p1
 
 %build
+rm -f missing
 aclocal
 autoconf
-automake
-autoheader
+automake -a -c
 %configure
 %{__make}
 
