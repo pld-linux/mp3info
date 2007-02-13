@@ -1,6 +1,6 @@
 Summary:	Utility for MP3 information and tag modification
-Summary(pl.UTF-8):   Program do manipulowania tagami ID3 plików w formacie MP3
-Summary(tr.UTF-8):   MP3 ses dosyası bilgileri düzenleme aracı
+Summary(pl.UTF-8):	Program do manipulowania tagami ID3 plików w formacie MP3
+Summary(tr.UTF-8):	MP3 ses dosyası bilgileri düzenleme aracı
 Name:		mp3info
 Version:	0.2.16
 Release:	6
