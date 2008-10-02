@@ -4,9 +4,10 @@ Summary(tr.UTF-8):	MP3 ses dosyası bilgileri düzenleme aracı
 Name:		mp3info
 Version:	0.2.16
 Release:	6
-License:	GPL
+License:	GPL v2
 Group:		Applications/Sound
-Source0:	ftp://bimbo.hive.no/pub/mp3info/%{name}-%{version}.tar.bz2
+# originally from ftp://bimbo.hive.no/pub/mp3info/ (dead)
+Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	ef1b3d9b83d2918699de60942fe8d5b5
 Patch0:		%{name}-aclocal.patch
 Patch1:		%{name}-time.h.patch
@@ -35,16 +36,15 @@ değiştirmenizi sağlayan bir komut satırı aracıdır. Çeşitli şekillerde
 %patch1 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-CXX="%{__cc}"; export CXX
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -54,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/*/*
+%attr(755,root,root) %{_bindir}/mp3info
+%{_mandir}/man1/mp3info.1*
