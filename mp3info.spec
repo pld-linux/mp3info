@@ -1,9 +1,10 @@
 Summary:	Utility for MP3 information and tag modification
+Summary(hu.UTF-8):	Eszköz MP3 információk és tag módosítására
 Summary(pl.UTF-8):	Program do manipulowania tagami ID3 plików w formacie MP3
 Summary(tr.UTF-8):	MP3 ses dosyası bilgileri düzenleme aracı
 Name:		mp3info
 Version:	0.2.16
-Release:	6
+Release:	7
 License:	GPL v2
 Group:		Applications/Sound
 # originally from ftp://bimbo.hive.no/pub/mp3info/ (dead)
@@ -19,6 +20,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 mp3info is a command line utility to extract and manipulate TAG (ID3)
 info from MP3 files. It also has a VERY configurable output.
+
+%description -l hu.UTF-8
+mp3info egy parancssoros eszköz TAG (ID3) informácikók kinyerésére és
+szerkesztésére MP3 fájlokban. A kimenete is konfigurálható.
 
 %description -l pl.UTF-8
 mp3info jest programem do manipulowania tagami ID3 plików w formacie
